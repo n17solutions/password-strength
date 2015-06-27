@@ -1,0 +1,5 @@
+<span>
+	<ul class="strength-indicator" title="{{ result.complexity }}">
+		<li ng-repeat="i in [1,4,5,6,7,8]" class="point" ng-class="{ true: result.label }[i <= result.rank]"></li>
+	</ul>
+</span>

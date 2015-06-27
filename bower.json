@@ -1,0 +1,36 @@
+{
+  "name": "n17-password-strength",
+  "version": "1.0.0",
+  "homepage": "https://github.com/n17solutions/password-strength",
+  "authors": [
+    "James Woodley <info@n17solutions.com>"
+  ],
+  "description": "Shows strength of given password string",
+  "main": "gulpfile.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "n17",
+    "solutions",
+    "angular",
+    "directive",
+    "password",
+    "strength",
+    "validator"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "src",
+    "gulpfile.js",
+    "package.json",
+    "webpack.*"
+  ],
+  "devDependencies": {
+    "angular": "~1.3.15"
+  }
+}
