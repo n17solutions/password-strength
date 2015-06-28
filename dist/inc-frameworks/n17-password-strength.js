@@ -57,9 +57,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 
 	var angular = __webpack_require__(1);
-	var app = angular.module('n17-validators', []);
+
+	try {
+	  angular.module('n17-validators');
+	} catch (e) {
+	  angular.module('n17-validators', [])
+	}
 
 	__webpack_require__(3);
+
 
 /***/ },
 /* 1 */
