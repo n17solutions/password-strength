@@ -189,5 +189,5 @@ gulp.task('package:production-inc-frameworks', ['build-production-inc-frameworks
 });
 
 gulp.task('production', [], function(cb) {
-	runSequence('clean', 'minify:css', 'html2js', 'package:production', 'package:production-inc-frameworks', 'clean:templates', cb);
+	runSequence('clean', 'html2js', 'package:production', 'package:production-inc-frameworks', 'clean:templates', 'minify:css', cb);
 });

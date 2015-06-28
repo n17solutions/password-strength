@@ -75,7 +75,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var app = angular.module('n17-validators');
 
-	app.directive('passwordStrength', [__webpack_require__(3)]);
+	app.directive('n17PasswordStrength', [__webpack_require__(3)]);
+
 
 /***/ },
 /* 3 */
@@ -139,7 +140,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			scope: {
 				model: 	'=ngModel',
 				target: '@',
-				type: 	'@'
+				callback: '&'
 			},
 			templateUrl: '/templates/strength.tpl.html',
 			replace: true,
@@ -177,6 +178,10 @@ return /******/ (function(modules) { // webpackBootstrap
 					}
 
 					formCtrl[scope.target].$setValidity('strength', requiredComplexity <= scope.result.rank && requiredCharsets <= charsets);
+
+					if (scope.callback) {
+						scope.callback({ result: scope.result.complexity });
+					}
 				};
 
 				scope.$watch('model', updateStrength);
@@ -184,8 +189,9 @@ return /******/ (function(modules) { // webpackBootstrap
 		};
 	};
 
+
 /***/ }
 /******/ ])
 });
 ;
-!function(l){try{l=angular.module("n17-validators")}catch(t){l=angular.module("n17-validators",[])}l.run(["$templateCache",function(l){l.put("/templates/pills.tpl.html",'<span><ul class="strength-indicator" title="{{ result.complexity }}"><li ng-repeat="i in [1,4,5,6,7,8]" class="point" ng-class="{ true: result.label }[i <= result.rank]"></li></ul></span>')}])}(),function(l){try{l=angular.module("n17-validators")}catch(t){l=angular.module("n17-validators",[])}l.run(["$templateCache",function(l){l.put("/templates/strength.tpl.html",'<span class="label label-{{ result.label }}">{{ result.complexity }}</span>')}])}();
+!function(l){try{l=angular.module("n17-validators")}catch(a){l=angular.module("n17-validators",[])}l.run(["$templateCache",function(l){l.put("/templates/strength.tpl.html",'<span class="label label-{{ result.label }}">{{ result.complexity }}</span>')}])}();

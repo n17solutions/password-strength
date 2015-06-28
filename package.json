@@ -1,6 +1,6 @@
 {
   "name": "n17-password-strength",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Shows strength of given password string",
   "main": "gulpfile.js",
   "directories": {
