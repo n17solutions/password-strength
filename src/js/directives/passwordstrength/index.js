@@ -56,7 +56,7 @@ module.exports = function() {
 		scope: {
 			model: 	'=ngModel',
 			target: '@',
-			type: 	'@'
+			callback: '&'
 		},
 		templateUrl: '/templates/strength.tpl.html',
 		replace: true,
@@ -94,6 +94,10 @@ module.exports = function() {
 				}
 
 				formCtrl[scope.target].$setValidity('strength', requiredComplexity <= scope.result.rank && requiredCharsets <= charsets);
+
+				if (scope.callback) {
+					scope.callback({ result: scope.result.complexity });
+				}
 			};
 
 			scope.$watch('model', updateStrength);

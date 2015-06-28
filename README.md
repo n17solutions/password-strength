@@ -21,14 +21,14 @@ The usable files are housed in the **dist** folder
 N17 Password Strength requires:
 * AngularJS
 
-If you are already using these frameworks in your project, you should use the files from the **no-frameworks** folder. We have also included a full bundle in the **inc-frameworks** folder. 
+If you are already using these frameworks in your project, you should use the files from the **no-frameworks** folder. We have also included a full bundle in the **inc-frameworks** folder.
 
 If using the **inc-frameworks** source, you will need to bootstrap an AngularJS App around all N17 Wait Directives on the page. For Example:
 
 ```html
 <div ng-app="n17-validators">
 	<input type="password" name="password" ng-model="user.password" />
-	<span target="password" ng-model="user.password" min-length="4" complexity="6" charsets="3" password-strength></span>
+	<span target="password" ng-model="user.password" min-length="4" complexity="6" charsets="3" n17-password-strength></span>
 		...
 ```
 
@@ -41,16 +41,15 @@ var app = angular.module('myapp', ['n17-validators']);
 
 ```html
 <input type="password" name="password" ng-model="user.password" />
-<span target="password" ng-model="user.password" min-length="4" complexity="6" charsets="3" password-strength></span>
+<span target="password" ng-model="user.password" min-length="4" complexity="6" charsets="3" n17-password-strength></span>
 ```
 
-### Customisation
+### Result callback
 
-You can change the type to "pills" by adding the type attribute set to pill
+You can specify a function within the callback attribute to gather the result of the complexity function, the argument
+required is called 'result'. For Example:
 
 ```html
 <input type="password" name="password" ng-model="user.password" />
-<span target="password" type="pill" ng-model="user.password" min-length="4" complexity="6" charsets="3" password-strength></span>
+<span target="password" ng-model="user.password" min-length="4" complexity="6" charsets="3" callback="callbackFunc(result)" n17-password-strength></span>
 ```
-
-The CSS to style this is included, however feel free to amend this to your needs!
