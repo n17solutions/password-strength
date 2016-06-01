@@ -6,7 +6,7 @@
     "James Woodley <info@n17solutions.com>"
   ],
   "description": "Shows strength of given password string",
-  "main": "gulpfile.js",
+  "main": "dist/no-frameworks/n17-password-strength.js",
   "moduleType": [
     "node"
   ],
